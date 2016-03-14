@@ -8,7 +8,7 @@ This is a simple program that redirect command from ethernet to serial and vice 
 This will mainly used as gateway
 Parse cmd and return result
 
-python3 main.py /dev/cu.usbserial-A4008UPt 115200
+python3 gateway.py /dev/cu.usbserial-A4008UPt 115200
 
 change the device to your /dev/ttyUSB0 on laptop or /dev/ttyO1 on BBB
 """

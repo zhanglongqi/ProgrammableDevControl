@@ -10,13 +10,13 @@ It will work with GUI
 # !/usr/bin/env python
 
 import socket
-from dev.chroma_63211 import cmds
+from dev import chroma_63211
 from time import sleep
 
 TCP_IP = '127.0.0.1'
 TCP_PORT = 7777
 BUFFER_SIZE = 1024
-MESSAGE = cmds['check_model']
+MESSAGE = chroma_63211.cmds['check_model']
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -29,3 +29,4 @@ while True:
     print("received data:", data)
     # sleep(1)
 s.close()
+
