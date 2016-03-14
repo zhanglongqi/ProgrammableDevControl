@@ -3,8 +3,8 @@
 """
 longqi 14/Mar/16 15:25
 Description:
-This is the control client
-It will work with GUI
+This is the controller side
+It will work with GUI in the future
 
 """
 # !/usr/bin/env python
@@ -18,15 +18,13 @@ TCP_PORT = 7777
 BUFFER_SIZE = 1024
 MESSAGE = chroma_63211.cmds['check_model']
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+chroma_63211_conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-s.connect((TCP_IP, TCP_PORT))
+chroma_63211_conn.connect((TCP_IP, TCP_PORT))
 
 while True:
-    s.send(MESSAGE)
-    data = s.recv(BUFFER_SIZE)
-    # if len(data) > 0:
+    chroma_63211_conn.send(MESSAGE)
+    data = chroma_63211_conn.recv(BUFFER_SIZE)
     print("received data:", data)
     # sleep(1)
-s.close()
-
+chroma_63211_conn.close()
