@@ -10,21 +10,12 @@ It will work with GUI in the future
 # !/usr/bin/env python
 
 import socket
-from dev import chroma_63211
+from dev.chroma_63211 import Chroma63211
 from time import sleep
 
-TCP_IP = '127.0.0.1'
-TCP_PORT = 7777
-BUFFER_SIZE = 1024
-MESSAGE = chroma_63211.cmds['check_model']
-
-chroma_63211_conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-chroma_63211_conn.connect((TCP_IP, TCP_PORT))
+c3 = Chroma63211('127.0.0.1', 7777)
 
 while True:
-    chroma_63211_conn.send(MESSAGE)
-    data = chroma_63211_conn.recv(BUFFER_SIZE)
+    data = c3.check_model()
     print("received data:", data)
-    # sleep(1)
-chroma_63211_conn.close()
+    sleep(1)
