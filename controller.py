@@ -17,5 +17,6 @@ while True:
     data = c3.check_model()
     print("received data:", data)
     sleep(1)
-    data = c3.turn_on()
-    sleep(1)
+    c3.turn_on()
+    sleep(5)
+    c3.turn_off()

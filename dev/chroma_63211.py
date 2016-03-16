@@ -27,13 +27,9 @@ class Chroma63211(object):
 
     def turn_on(self):
         self.conn.send(self.cmds['load_on'])
-        # data = self.conn.recv(self.BUFFER_SIZE)
-        # return data
 
     def turn_off(self):
         self.conn.send(self.cmds['load_off'])
-        # data = self.conn.recv(self.BUFFER_SIZE)
-        # return data
 
     def set_power(self, power):
         pass
