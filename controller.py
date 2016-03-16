@@ -7,9 +7,7 @@ This is the controller side
 It will work with GUI in the future
 
 """
-# !/usr/bin/env python
 
-import socket
 from dev.chroma_63211 import Chroma63211
 from time import sleep
 
